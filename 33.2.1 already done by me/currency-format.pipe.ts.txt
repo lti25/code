@@ -1,0 +1,14 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'currencyFormat'
+})
+export class CurrencyFormatPipe implements PipeTransform {
+  transform(value: number | null, currencySymbol: string = '$'): string {
+    if (value === null || value === undefined) {
+      return 'Invalid amount';
+    }
+
+    return currencySymbol + value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+}

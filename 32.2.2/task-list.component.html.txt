@@ -1,0 +1,5 @@
+<div *ngFor="let task of tasks" [ngClass]="{'in-progress': task.status === 'In Progress', 'completed': task.status === 'Completed'}" (click)="selectTask(task)">
+  {{ task.title }}
+</div>
+
+<app-task-detail *ngIf="selectedTask" [task]="selectedTask"></app-task-detail>

@@ -1,0 +1,19 @@
+<div>
+  <h2>User List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Registration Date</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.registrationDate | dateFormat }}</td>
+        <td>{{ user.balance | currencyFormat }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

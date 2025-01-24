@@ -1,0 +1,10 @@
+<div>
+  <h3>Child Component</h3>
+  <ul>
+    <!-- Display the list of items passed from the parent -->
+    <li *ngFor="let item of items">
+      {{ item }}
+      <button (click)="selectItem(item)">Select</button>
+    </li>
+  </ul>
+</div>

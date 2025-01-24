@@ -1,0 +1,5 @@
+<div>
+  <h2>Parent Component</h2>
+  <app-child [items]="itemList" (itemSelected)="handleItemSelected($event)"></app-child>
+  <p *ngIf="selectedItem">Selected Item: {{ selectedItem }}</p>
+</div>
