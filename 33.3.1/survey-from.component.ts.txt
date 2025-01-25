@@ -1,0 +1,22 @@
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+@Component({
+  selector: 'app-survey-form',
+  templateUrl: './survey-form.component.html',
+  styleUrls: ['./survey-form.component.css']
+})
+export class SurveyFormComponent {
+  username: string = ' ';
+  feedback: string = ' ';
+  submitted: boolean = false;
+  onSubmit(form: NgForm)
+  {
+    if(form.valid){
+      this.username=form.value.username;
+      this.feedback=form.value.feedback;
+      this.submitted=true;
+      form.reset();
+    }
+  }
+//todo: complete missing code..
+}

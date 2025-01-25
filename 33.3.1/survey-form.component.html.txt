@@ -1,0 +1,22 @@
+<div class="container mt-5">
+<div class ="container mt-5">
+<h2> Survey Feedback Form </h2>
+<form #surveyForm ="ngForm" (submit) = "onSubmit(surveyForm)">
+<div class="mb-3">
+<label for="username" class="form-label">Username</label>
+<input type="text" id="username" name="username" class="form-control" ngModel required>
+<div *ngIf = "surveyForm.submitted && !surveyForm.controls['username']?.valid" class="text-danger">Username is required</div>
+</div>
+<div class="mb-3">
+<label for ="feedback" class="form-label">Feedback</label>
+<textarea id="feedback" name="feedback" class="form-control" ngModel required></textarea>
+<div *ngIf = "surveyForm.submitted && !surveyForm.controls['feedback']?.valid" class="text-danger">Feedback is required</div>
+</div>
+<button type="submit" class="btn btn-primary"> Submit </button>
+</form>
+<div *ngIf="submitted" class="mt-4">
+<h3> Submitted Feedback </h3>
+<p><strong> Username: </strong>{{ username }}</p>
+<p><strong> Feedback: </strong>{{ feedback }}</p>
+</div>
+</div>
