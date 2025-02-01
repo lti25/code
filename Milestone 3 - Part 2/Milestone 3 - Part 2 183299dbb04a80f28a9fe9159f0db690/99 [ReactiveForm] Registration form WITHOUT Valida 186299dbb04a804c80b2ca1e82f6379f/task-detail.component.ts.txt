@@ -1,0 +1,25 @@
+import { Component, Input } from '@angular/core';
+
+interface Task {
+  id: number;
+  title: string;
+  description: string;
+  status: 'In Progress' | 'Completed';
+}
+
+@Component({
+  selector: 'app-task-detail',
+  templateUrl: './task-detail.component.html',
+  styleUrls: ['./task-detail.component.scss']
+})
+export class TaskDetailComponent {
+  @Input() task!: Task;
+
+  markAsCompleted(): void {
+    this.task.status = 'Completed';
+  }
+
+  markAsInProgress(): void {
+    this.task.status = 'In Progress';
+  }
+}

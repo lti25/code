@@ -1,0 +1,26 @@
+import { Component } from '@angular/core';
+
+interface Task {
+  id: number;
+  title: string;
+  description: string;
+  status: 'In Progress' | 'Completed';
+}
+
+@Component({
+  selector: 'app-task-list',
+  templateUrl: './task-list.component.html',
+  styleUrls: ['./task-list.component.scss']
+})
+export class TaskListComponent {
+  tasks: Task[] = [
+    { id: 1, title: 'Task 1', description: 'Description 1', status: 'In Progress' },
+    { id: 2, title: 'Task 2', description: 'Description 2', status: 'Completed' }
+  ];
+
+  selectedTask: Task | null = null;
+
+  selectTask(task: Task): void {
+    this.selectedTask = task;
+  }
+}
